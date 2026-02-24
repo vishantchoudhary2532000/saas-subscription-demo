@@ -1,54 +1,41 @@
-# Ignore everything except frontend and backend folders
+# Ignore everything by default
 *
 
-# But don't ignore these folders and important files
+# But don't ignore these folders and their contents
 !frontend/
 !backend/
 !.gitignore
 !README.md
 
-# Don't ignore files in frontend and backend
+# Allow all files in frontend and backend (their own .gitignore will handle what to ignore)
 !frontend/**
 !backend/**
 
-# But ignore node_modules, dist, etc. inside those folders (handled by their own .gitignore)
-frontend/node_modules/
-frontend/.next/
-frontend/dist/
-frontend/build/
-backend/node_modules/
-backend/dist/
-backend/build/
+# Ignore other root level files and folders
+check-node-version.js
+documents/
+*.md
+!README.md
 
-# Environment files (root level)
+# Environment files (root level only)
 .env
 .env.local
 .env*.local
 
-# IDE (root level)
+# IDE (root level only)
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
-# Logs
+# Logs (root level only)
 *.log
 npm-debug.log*
 
 # Temporary files
 *.tmp
 *.temp
-
-# Documentation build
-docs/_build/
-
-# Other project files to ignore (but keep README.md and .gitignore)
-check-node-version.js
-documents/
-*.md
-!README.md
-!.gitignore
